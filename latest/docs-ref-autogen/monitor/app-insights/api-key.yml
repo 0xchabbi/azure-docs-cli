@@ -20,7 +20,7 @@ directCommands:
                                            [--write-properties]
   examples:
   - summary: Create a component with kind web and location.
-    syntax: az monitor app-insights api-key create --api-key cli-demo --read-properties ReadTelemetry --write-properties WriteAnnotations -g demoRg --app testApp
+    syntax: az monitor app-insights api-key create --api-key cli-demo --read-properties ReadTelemetry -g demoRg --app testApp
   - summary: Create a component with kind web and location without any permission
     syntax: az monitor app-insights api-key create --api-key cli-demo --read-properties '""' --write-properties '""' -g demoRg --app testApp
   requiredParameters:
@@ -38,10 +38,10 @@ directCommands:
     description: ''
   optionalParameters:
   - name: --read-properties
-    summary: A space-separated list of names of read Roles for this API key to inherit. Possible values include ReadTelemetry, AuthenticateSDKControlChannel and "".
+    summary: A space seperated list of names of read Roles for this API key to inherit. Possible values include ReadTelemetry, AuthenticateSDKControlChannel and "".
     description: ''
   - name: --write-properties
-    summary: A space-separated list of names of write Roles for this API key to inherit. Possible values include WriteAnnotations and "".
+    summary: A space seperated list of names of write Roles for this API key to inherit. Possible values include WriteAnnotations and "".
     description: ''
 - uid: az_monitor_app-insights_api-key_delete
   name: az monitor app-insights api-key delete
@@ -59,7 +59,7 @@ directCommands:
   requiredParameters:
   - isRequired: true
     name: --api-key
-    summary: Name of the API key to delete. Can be found using `api-key show`.
+    summary: Name of the API key to delete. Can be found using `api-keys show`.
     description: ''
   optionalParameters:
   - name: --app -a
@@ -91,7 +91,7 @@ directCommands:
     syntax: az monitor app-insights api-key show --app demoApp -g demoRg
   optionalParameters:
   - name: --api-key
-    summary: Name of the API key to fetch. Can be found using `api-key show`.
+    summary: Name of the API key to fetch. Can be found using `api-keys show`.
     description: ''
   - name: --app -a
     summary: GUID, app name, or fully-qualified Azure resource name of Application Insights component. The application GUID may be acquired from the API Access menu item on any Application Insights resource in the Azure portal. If using an application name, please specify resource group.

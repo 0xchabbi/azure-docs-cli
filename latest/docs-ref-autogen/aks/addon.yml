@@ -52,7 +52,7 @@ directCommands:
         ingress-appgw                   - enable Application Gateway Ingress Controller addon (PREVIEW).
         open-service-mesh               - enable Open Service Mesh addon (PREVIEW).
         gitops                          - enable GitOps (PREVIEW).
-        azure-keyvault-secrets-provider - enable Azure Keyvault Secrets Provider addon.
+        azure-keyvault-secrets-provider - enable Azure Keyvault Secrets Provider addon (PREVIEW).
         web_application_routing         - enable Web Application Routing addon (PREVIEW). Specify "--dns-zone-resource-id" to configure DNS.
   syntax: >-
     az aks addon enable --addon
@@ -63,12 +63,10 @@ directCommands:
                         [--appgw-subnet-cidr]
                         [--appgw-subnet-id]
                         [--appgw-watch-namespace]
-                        [--data-collection-settings]
                         [--dns-zone-resource-id]
                         [--enable-msi-auth-for-monitoring {false, true}]
                         [--enable-secret-rotation]
                         [--enable-sgxquotehelper]
-                        [--enable-syslog {false, true}]
                         [--no-wait]
                         [--rotation-poll-interval]
                         [--subnet-name]
@@ -109,14 +107,11 @@ directCommands:
   - name: --appgw-watch-namespace
     summary: Specify the namespace, which AGIC should watch. This could be a single string value, or a comma-separated list of namespaces. Use with ingress-azure addon.
     description: ''
-  - name: --data-collection-settings
-    summary: Path to JSON file containing data collection settings for Monitoring addon.
-    description: ''
   - name: --dns-zone-resource-id
     summary: The resource ID of the DNS zone resource to use with the web_application_routing addon.
     description: ''
   - name: --enable-msi-auth-for-monitoring
-    defaultValue: "True"
+    defaultValue: "False"
     parameterValueGroup: "false, true"
     summary: Send monitoring data to Log Analytics using the cluster's assigned identity (instead of the Log Analytics Workspace's shared key).
     description: ''
@@ -127,11 +122,6 @@ directCommands:
   - name: --enable-sgxquotehelper
     defaultValue: "False"
     summary: Enable SGX quote helper for confcom addon.
-    description: ''
-  - name: --enable-syslog
-    defaultValue: "False"
-    parameterValueGroup: "false, true"
-    summary: Enable syslog data collection for Monitoring addon.
     description: ''
   - name: --no-wait
     defaultValue: "False"
@@ -204,12 +194,10 @@ directCommands:
                         [--appgw-subnet-cidr]
                         [--appgw-subnet-id]
                         [--appgw-watch-namespace]
-                        [--data-collection-settings]
                         [--dns-zone-resource-id]
                         [--enable-msi-auth-for-monitoring {false, true}]
                         [--enable-secret-rotation]
                         [--enable-sgxquotehelper]
-                        [--enable-syslog {false, true}]
                         [--no-wait]
                         [--rotation-poll-interval]
                         [--subnet-name]
@@ -250,13 +238,11 @@ directCommands:
   - name: --appgw-watch-namespace
     summary: Specify the namespace, which AGIC should watch. This could be a single string value, or a comma-separated list of namespaces. Use with ingress-azure addon.
     description: ''
-  - name: --data-collection-settings
-    summary: Path to JSON file containing data collection settings for Monitoring addon.
-    description: ''
   - name: --dns-zone-resource-id
     summary: The resource ID of the DNS zone resource to use with the web_application_routing addon.
     description: ''
   - name: --enable-msi-auth-for-monitoring
+    defaultValue: "False"
     parameterValueGroup: "false, true"
     summary: Send monitoring data to Log Analytics using the cluster's assigned identity (instead of the Log Analytics Workspace's shared key).
     description: ''
@@ -267,11 +253,6 @@ directCommands:
   - name: --enable-sgxquotehelper
     defaultValue: "False"
     summary: Enable SGX quote helper for confcom addon.
-    description: ''
-  - name: --enable-syslog
-    defaultValue: "False"
-    parameterValueGroup: "false, true"
-    summary: Enable syslog data collection for Monitoring addon.
     description: ''
   - name: --no-wait
     defaultValue: "False"

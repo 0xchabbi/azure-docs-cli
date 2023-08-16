@@ -17,9 +17,8 @@ directCommands:
                                                                --resource-group
                                                                --status {Approved, Disconnected, Pending, Rejected}
                                                                --workspace-name
-                                                               [--actions-required]
+                                                               [--action-required]
                                                                [--description]
-                                                               [--group-ids]
                                                                [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]
   requiredParameters:
   - isRequired: true
@@ -40,14 +39,11 @@ directCommands:
     summary: The name of the workspace.
     description: ''
   optionalParameters:
-  - name: --actions-required
+  - name: --action-required
     summary: Actions required for a private endpoint connection.
     description: ''
   - name: --description
     summary: The description for the current state of a private endpoint connection.
-    description: ''
-  - name: --group-ids
-    summary: GroupIds from the private link service resource.  Support shorthand-syntax, json-file and yaml-file. Try `??` to show more.
     description: ''
   - name: --no-wait
     parameterValueGroup: "0, 1, f, false, n, no, t, true, y, yes"
@@ -131,11 +127,10 @@ directCommands:
   summary: Update the status of a private endpoint connection with the specified name.
   description: ''
   syntax: >-
-    az databricks workspace private-endpoint-connection update [--actions-required]
+    az databricks workspace private-endpoint-connection update [--action-required]
                                                                [--add]
                                                                [--description]
                                                                [--force-string {0, 1, f, false, n, no, t, true, y, yes}]
-                                                               [--group-ids]
                                                                [--ids]
                                                                [--name]
                                                                [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]
@@ -146,7 +141,7 @@ directCommands:
                                                                [--subscription]
                                                                [--workspace-name]
   optionalParameters:
-  - name: --actions-required
+  - name: --action-required
     summary: Actions required for a private endpoint connection.
     description: ''
   - name: --add
@@ -158,9 +153,6 @@ directCommands:
   - name: --force-string
     parameterValueGroup: "0, 1, f, false, n, no, t, true, y, yes"
     summary: When using 'set' or 'add', preserve string literals instead of attempting to convert to JSON.
-    description: ''
-  - name: --group-ids
-    summary: GroupIds from the private link service resource.  Support shorthand-syntax, json-file and yaml-file. Try `??` to show more.
     description: ''
   - name: --ids
     summary: One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments.

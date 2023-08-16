@@ -5,7 +5,7 @@ extensionInformation: >-
   > [!Note]
 
   > This reference is part of the **front-door** extension for the Azure CLI  (version 2.0.68 or higher).  The extension will automatically install the first time you run an **az network front-door** command.  [Learn more](https://docs.microsoft.com/en-us/cli/azure/azure-cli-extensions-overview) about extensions.
-summary: Manage Classical Azure Front Doors. For managing Azure Front Door Standard/Premium, please refer https://docs.microsoft.com/en-us/cli/azure/afd?view=azure-cli-latest.
+summary: Manage Front Doors.
 description: ''
 directCommands:
 - uid: az_network_front-door_check-custom-domain
@@ -21,7 +21,7 @@ directCommands:
   requiredParameters:
   - isRequired: true
     name: --host-name
-    summary: Required. The host name of the custom domain. Must be a domain name.
+    summary: The host name of the custom domain. Must be a domain name.
     description: ''
   optionalParameters:
   - name: --ids
@@ -35,26 +35,6 @@ directCommands:
     description: ''
   - name: --subscription
     summary: Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`.
-    description: ''
-- uid: az_network_front-door_check-name-availability
-  name: az network front-door check-name-availability
-  summary: Check the availability of a Front Door resource name.
-  description: ''
-  syntax: >-
-    az network front-door check-name-availability --name
-                                                  --resource-type {Microsoft.Network/frontDoors, Microsoft.Network/frontDoors/frontendEndpoints}
-  examples:
-  - summary: Check the availability of a Front Door resource name.
-    syntax: az network front-door check-name-availability --name frontdoor1 --resource-type Microsoft.Network/frontDoors
-  requiredParameters:
-  - isRequired: true
-    name: --name
-    summary: The resource name to be validated.
-    description: ''
-  - isRequired: true
-    name: --resource-type
-    parameterValueGroup: "Microsoft.Network/frontDoors, Microsoft.Network/frontDoors/frontendEndpoints"
-    summary: The type of the resource whose name is to be validated.
     description: ''
 - uid: az_network_front-door_create
   name: az network front-door create
@@ -199,7 +179,7 @@ directCommands:
   requiredParameters:
   - isRequired: true
     name: --content-paths
-    summary: The path to the content to be purged. Can describe a file path or a wildcard directory.
+    summary: The path to the content to be purged. Can describe a file path or a wild card directory.
     description: ''
   optionalParameters:
   - name: --ids
@@ -291,78 +271,17 @@ directCommands:
   - name: --tags
     summary: 'Space-separated tags: key[=value] [key[=value] ...]. Use "" to clear existing tags.'
     description: ''
-- uid: az_network_front-door_wait
-  name: az network front-door wait
-  summary: Place the CLI in a waiting state until a condition of the Front Door is met.
-  description: ''
-  syntax: >-
-    az network front-door wait [--created]
-                               [--custom]
-                               [--deleted]
-                               [--exists]
-                               [--ids]
-                               [--interval]
-                               [--name]
-                               [--resource-group]
-                               [--subscription]
-                               [--timeout]
-                               [--updated]
-  examples:
-  - summary: Wait until a front door is created.
-    syntax: az network front-door wait -g MyResourceGroup --name frontdoor1 --created
-  optionalParameters:
-  - name: --created
-    defaultValue: "False"
-    summary: Wait until created with 'provisioningState' at 'Succeeded'.
-    description: ''
-  - name: --custom
-    summary: Wait until the condition satisfies a custom JMESPath query. E.g. provisioningState!='InProgress', instanceView.statuses[?code=='PowerState/running'].
-    description: ''
-  - name: --deleted
-    defaultValue: "False"
-    summary: Wait until deleted.
-    description: ''
-  - name: --exists
-    defaultValue: "False"
-    summary: Wait until the resource exists.
-    description: ''
-  - name: --ids
-    summary: One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments.
-    description: ''
-  - name: --interval
-    defaultValue: "30"
-    summary: Polling interval in seconds.
-    description: ''
-  - name: --name -n
-    summary: Name of the Front Door.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
-    description: ''
-  - name: --subscription
-    summary: Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`.
-    description: ''
-  - name: --timeout
-    defaultValue: "3600"
-    summary: Maximum wait in seconds.
-    description: ''
-  - name: --updated
-    defaultValue: "False"
-    summary: Wait until updated with provisioningState at 'Succeeded'.
-    description: ''
 commands:
 - az_network_front-door_backend-pool
 - az_network_front-door_backend-pool_backend
 - az_network_front-door_backend-pool_backend_add
 - az_network_front-door_backend-pool_backend_list
 - az_network_front-door_backend-pool_backend_remove
-- az_network_front-door_backend-pool_backend_update
 - az_network_front-door_backend-pool_create
 - az_network_front-door_backend-pool_delete
 - az_network_front-door_backend-pool_list
 - az_network_front-door_backend-pool_show
 - az_network_front-door_check-custom-domain
-- az_network_front-door_check-name-availability
 - az_network_front-door_create
 - az_network_front-door_delete
 - az_network_front-door_frontend-endpoint
@@ -372,14 +291,12 @@ commands:
 - az_network_front-door_frontend-endpoint_enable-https
 - az_network_front-door_frontend-endpoint_list
 - az_network_front-door_frontend-endpoint_show
-- az_network_front-door_frontend-endpoint_wait
 - az_network_front-door_list
 - az_network_front-door_load-balancing
 - az_network_front-door_load-balancing_create
 - az_network_front-door_load-balancing_delete
 - az_network_front-door_load-balancing_list
 - az_network_front-door_load-balancing_show
-- az_network_front-door_load-balancing_update
 - az_network_front-door_probe
 - az_network_front-door_probe_create
 - az_network_front-door_probe_delete
@@ -443,7 +360,6 @@ commands:
 - az_network_front-door_waf-policy_rule_update
 - az_network_front-door_waf-policy_show
 - az_network_front-door_waf-policy_update
-- az_network_front-door_wait
 globalParameters:
 - name: --debug
   summary: Increase logging verbosity to show all debug logs.
@@ -462,4 +378,4 @@ globalParameters:
 - name: --verbose
   summary: Increase logging verbosity. Use --debug for full debug logs.
 metadata:
-  description: Manage Classical Azure Front Doors. For managing Azure Front Door Standard/Premium, please refer https://docs.microsoft.com/en-us/cli/azure/afd?view=azure-cli-latest.
+  description: Manage Front Doors.

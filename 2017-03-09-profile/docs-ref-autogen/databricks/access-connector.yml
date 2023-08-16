@@ -15,16 +15,13 @@ directCommands:
   syntax: >-
     az databricks access-connector create --name
                                           --resource-group
-                                          [--identities]
-                                          [--identity-type {None, SystemAssigned, SystemAssigned,UserAssigned, UserAssigned}]
+                                          [--identity-type {None, SystemAssigned}]
                                           [--location]
                                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]
                                           [--tags]
   examples:
   - summary: Create a databricks accessConnector
     syntax: az databricks access-connector create --resource-group MyResourceGroup --name MyAccessConnector --location westus --identity-type SystemAssigned
-  - summary: Create a databricks accessConnector with identities
-    syntax: az databricks access-connector create --resource-group MyResourceGroup --name MyAccessConnector --location westus --identity-type UserAssigned --user-assigned-identities {"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}":{}}
   requiredParameters:
   - isRequired: true
     name: --name -n
@@ -35,11 +32,8 @@ directCommands:
     summary: Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
     description: ''
   optionalParameters:
-  - name: --identities --user-assigned-identities
-    summary: "The set of user assigned identities associated with the resource. The userAssignedIdentities dictionary keys will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}. The dictionary values can be empty objects ({}) in requests.  Support shorthand-syntax, json-file and yaml-file. Try `??` to show more."
-    description: ''
   - name: --identity-type
-    parameterValueGroup: "None, SystemAssigned, SystemAssigned,UserAssigned, UserAssigned"
+    parameterValueGroup: "None, SystemAssigned"
     summary: The identity type.
     description: ''
   - name: --location -l
@@ -128,8 +122,7 @@ directCommands:
   syntax: >-
     az databricks access-connector update [--add]
                                           [--force-string {0, 1, f, false, n, no, t, true, y, yes}]
-                                          [--identities]
-                                          [--identity-type {None, SystemAssigned, SystemAssigned,UserAssigned, UserAssigned}]
+                                          [--identity-type {None, SystemAssigned}]
                                           [--ids]
                                           [--name]
                                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]
@@ -141,8 +134,6 @@ directCommands:
   examples:
   - summary: Update a databricks accessConnector
     syntax: az databricks access-connector update --resource-group MyResourceGroup --name MyAccessConnector --location westus --identity-type SystemAssigned
-  - summary: Update a databricks accessConnector with identities
-    syntax: az databricks access-connector update --resource-group MyResourceGroup --name MyAccessConnector --identity-type UserAssigned --user-assigned-identities {"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}":{}}
   optionalParameters:
   - name: --add
     summary: 'Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>.'
@@ -151,11 +142,8 @@ directCommands:
     parameterValueGroup: "0, 1, f, false, n, no, t, true, y, yes"
     summary: When using 'set' or 'add', preserve string literals instead of attempting to convert to JSON.
     description: ''
-  - name: --identities --user-assigned-identities
-    summary: "The set of user assigned identities associated with the resource. The userAssignedIdentities dictionary keys will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}. The dictionary values can be empty objects ({}) in requests.  Support shorthand-syntax, json-file and yaml-file. Try `??` to show more."
-    description: ''
   - name: --identity-type
-    parameterValueGroup: "None, SystemAssigned, SystemAssigned,UserAssigned, UserAssigned"
+    parameterValueGroup: "None, SystemAssigned"
     summary: The identity type.
     description: ''
   - name: --ids

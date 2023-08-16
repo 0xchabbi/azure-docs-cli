@@ -6,7 +6,7 @@ extensionInformation: >-
 
   > This reference is part of the **cosmosdb-preview** extension for the Azure CLI  (version 2.17.1 or higher).  The extension will automatically install the first time you run an **az managed-cassandra cluster** command.  [Learn more](https://docs.microsoft.com/en-us/cli/azure/azure-cli-extensions-overview) about extensions.
 summary: Azure Managed Cassandra Cluster.
-description: See https://docs.microsoft.com/en-us/azure/managed-instance-apache-cassandra/manage-resources-cli for Cassandra API samples.
+description: ''
 directCommands:
 - uid: az_managed-cassandra_cluster_create
   name: az managed-cassandra cluster create
@@ -17,14 +17,14 @@ directCommands:
                                         --delegated-management-subnet-id
                                         --location
                                         --resource-group
-                                        [--authentication-method {Cassandra, Ldap, None}]
+                                        [--authentication-method]
                                         [--cassandra-version]
                                         [--client-certificates]
                                         [--cluster-name-override]
                                         [--external-gossip-certificates]
                                         [--external-seed-nodes]
                                         [--hours-between-backups]
-                                        [--identity-type {None, SystemAssigned}]
+                                        [--identity]
                                         [--initial-cassandra-admin-password]
                                         [--no-wait]
                                         [--repair-enabled]
@@ -63,8 +63,7 @@ directCommands:
     description: ''
   optionalParameters:
   - name: --authentication-method
-    parameterValueGroup: "Cassandra, Ldap, None"
-    summary: Authentication mode can be None, Cassandra or Ldap. If None, no authentication will be required to connect to the Cassandra API. If Cassandra, then passwords will be used. Ldap is in preview.
+    summary: Authentication mode can be None or Cassandra. If None, no authentication will be required to connect to the Cassandra API. If Cassandra, then passwords will be used.
     description: ''
   - name: --cassandra-version
     summary: The version of Cassandra chosen.
@@ -84,10 +83,8 @@ directCommands:
   - name: --hours-between-backups
     summary: The number of hours between backup attempts.
     description: ''
-  - name: --identity-type
-    defaultValue: "None"
-    parameterValueGroup: "None, SystemAssigned"
-    summary: Type of identity used for Customer Managed Disk Key.
+  - name: --identity
+    summary: Identity used to authenticate.
     description: ''
   - name: --initial-cassandra-admin-password -i
     summary: The intial password to be configured when a cluster is created for authentication_method Cassandra.
@@ -149,6 +146,33 @@ directCommands:
   - name: --resource-group -g
     summary: Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
     description: ''
+- uid: az_managed-cassandra_cluster_node-status
+  name: az managed-cassandra cluster node-status
+  summary: Gets Status of all the nodes in all the datacenters in a given Cluster.
+  description: ''
+  syntax: >-
+    az managed-cassandra cluster node-status --cluster-name
+                                             --resource-group
+                                             [--no-wait]
+  examples:
+  - summary: This command gets the status of all the nodes in this cluster. By default a json is returned.
+    syntax: az managed-cassandra cluster node-status --resource-group MyResourceGroup --cluster-name MyCluster
+  - summary: This command gets the status of all the nodes in this cluster. When a table output is specified only one token is displayed. Use json output to get all the tokens.
+    syntax: az managed-cassandra cluster node-status --resource-group MyResourceGroup --cluster-name MyCluster --output table
+  requiredParameters:
+  - isRequired: true
+    name: --cluster-name -c
+    summary: Cluster Name.
+    description: ''
+  - isRequired: true
+    name: --resource-group -g
+    summary: Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
+    description: ''
+  optionalParameters:
+  - name: --no-wait
+    defaultValue: "False"
+    summary: Do not wait for the long-running operation to finish.
+    description: ''
 - uid: az_managed-cassandra_cluster_show
   name: az managed-cassandra cluster show
   summary: Get a Managed Cassandra Cluster Resource.
@@ -175,13 +199,13 @@ directCommands:
   syntax: >-
     az managed-cassandra cluster update --cluster-name
                                         --resource-group
-                                        [--authentication-method {Cassandra, Ldap, None}]
+                                        [--authentication-method]
                                         [--cassandra-version]
                                         [--client-certificates]
                                         [--external-gossip-certificates]
                                         [--external-seed-nodes]
                                         [--hours-between-backups]
-                                        [--identity-type {None, SystemAssigned}]
+                                        [--identity]
                                         [--no-wait]
                                         [--repair-enabled]
                                         [--tags]
@@ -201,8 +225,7 @@ directCommands:
     description: ''
   optionalParameters:
   - name: --authentication-method
-    parameterValueGroup: "Cassandra, Ldap, None"
-    summary: Authentication mode can be None, Cassandra or Ldap. If None, no authentication will be required to connect to the Cassandra API. If Cassandra, then passwords will be used. Ldap is in preview.
+    summary: Authentication mode can be None or Cassandra. If None, no authentication will be required to connect to the Cassandra API. If Cassandra, then passwords will be used.
     description: ''
   - name: --cassandra-version
     summary: The version of Cassandra chosen.
@@ -219,9 +242,8 @@ directCommands:
   - name: --hours-between-backups
     summary: The number of hours between backup attempts.
     description: ''
-  - name: --identity-type
-    parameterValueGroup: "None, SystemAssigned"
-    summary: Type of identity used for Customer Managed Disk Key.
+  - name: --identity
+    summary: Identity used to authenticate.
     description: ''
   - name: --no-wait
     defaultValue: "False"
@@ -234,12 +256,10 @@ directCommands:
     summary: 'Space-separated tags: key[=value] [key[=value] ...]. Use "" to clear existing tags.'
     description: ''
 commands:
-- az_managed-cassandra_cluster_backup
-- az_managed-cassandra_cluster_backup_list
-- az_managed-cassandra_cluster_backup_show
 - az_managed-cassandra_cluster_create
 - az_managed-cassandra_cluster_delete
 - az_managed-cassandra_cluster_list
+- az_managed-cassandra_cluster_node-status
 - az_managed-cassandra_cluster_show
 - az_managed-cassandra_cluster_update
 globalParameters:
@@ -260,4 +280,4 @@ globalParameters:
 - name: --verbose
   summary: Increase logging verbosity. Use --debug for full debug logs.
 metadata:
-  description: See https://docs.microsoft.com/en-us/azure/managed-instance-apache-cassandra/manage-resources-cli for Cassandra API samples.
+  description: Azure Managed Cassandra Cluster.

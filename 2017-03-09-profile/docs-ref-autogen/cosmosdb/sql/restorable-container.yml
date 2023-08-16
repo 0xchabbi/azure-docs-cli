@@ -32,11 +32,11 @@ directCommands:
     summary: Location.
     description: ''
   optionalParameters:
-  - name: --end-time -e
-    summary: End time of restorable Sql container event feed.
+  - name: --end-time
+    summary: The snapshot create timestamp before which snapshots need to be listed.
     description: ''
-  - name: --start-time -s
-    summary: Start time of restorable Sql container event feed.
+  - name: --start-time
+    summary: The snapshot create timestamp after which snapshots need to be listed.
     description: ''
 commands:
 - az_cosmosdb_sql_restorable-container_list

@@ -15,13 +15,11 @@ directCommands:
   syntax: >-
     az spring build-service build create --resource-group
                                          --service
-                                         [--apms]
                                          [--artifact-path]
                                          [--build-cpu]
                                          [--build-env]
                                          [--build-memory]
                                          [--builder]
-                                         [--certificates]
                                          [--disable-validation {false, true}]
                                          [--name]
                                          [--no-wait]
@@ -39,9 +37,6 @@ directCommands:
     summary: The name of Azure Spring Apps instance, you can configure the default service using az configure --defaults spring=<name>.
     description: ''
   optionalParameters:
-  - name: --apms
-    summary: Space-separated APM names.
-    description: ''
   - name: --artifact-path
     summary: Deploy the specified pre-built artifact (jar or netcore zip).
     description: ''
@@ -59,9 +54,6 @@ directCommands:
   - name: --builder
     defaultValue: "default"
     summary: The builder name used to build the executable.
-    description: ''
-  - name: --certificates
-    summary: Space-separated certificate names.
     description: ''
   - name: --disable-validation
     parameterValueGroup: "false, true"
@@ -162,13 +154,11 @@ directCommands:
   syntax: >-
     az spring build-service build update --resource-group
                                          --service
-                                         [--apms]
                                          [--artifact-path]
                                          [--build-cpu]
                                          [--build-env]
                                          [--build-memory]
                                          [--builder]
-                                         [--certificates]
                                          [--disable-validation {false, true}]
                                          [--name]
                                          [--no-wait]
@@ -186,9 +176,6 @@ directCommands:
     summary: The name of Azure Spring Apps instance, you can configure the default service using az configure --defaults spring=<name>.
     description: ''
   optionalParameters:
-  - name: --apms
-    summary: Space-separated APM names.
-    description: ''
   - name: --artifact-path
     summary: Deploy the specified pre-built artifact (jar or netcore zip).
     description: ''
@@ -203,9 +190,6 @@ directCommands:
     description: ''
   - name: --builder
     summary: The builder name used to build the executable.
-    description: ''
-  - name: --certificates
-    summary: Space-separated certificate names.
     description: ''
   - name: --disable-validation
     parameterValueGroup: "false, true"

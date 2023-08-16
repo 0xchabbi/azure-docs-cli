@@ -11,10 +11,7 @@ directCommands:
 - uid: az_ml_online-deployment_create
   name: az ml online-deployment create
   summary: Create a deployment. If the deployment already exists, it will fail. If you want to update existing deployment, use az ml online-deployment update.
-  description: >-
-    Minimum recommended compute SKU is Standard_DS3_v2 for general purpose endpoints. Learn more about SKUs here:
-
-    https://learn.microsoft.com/en-us/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list.
+  description: ''
   syntax: >-
     az ml online-deployment create --file
                                    --resource-group
@@ -22,10 +19,8 @@ directCommands:
                                    [--all-traffic]
                                    [--endpoint-name]
                                    [--local {false, true}]
-                                   [--local-enable-gpu {false, true}]
                                    [--name]
                                    [--no-wait]
-                                   [--package-model]
                                    [--set]
                                    [--skip-script-validation]
                                    [--vscode-debug {false, true}]
@@ -59,21 +54,12 @@ directCommands:
     parameterValueGroup: "false, true"
     summary: "Create deployment locally using Docker. Only one deployment per endpoint is allowed. Note: If specified endpoint doesn't exist, it will be created."
     description: ''
-  - name: --local-enable-gpu
-    defaultValue: "False"
-    parameterValueGroup: "false, true"
-    summary: Enable GPU for local deployment.
-    description: ''
   - name: --name -n
     summary: Name of the deployment.
     description: ''
   - name: --no-wait
     defaultValue: "False"
     summary: Do not wait for the long-running operation to finish.
-    description: ''
-  - name: --package-model
-    defaultValue: "False"
-    summary: '[THIS IS IN PREVIEW] Create packaged environment from the deployment yaml and use the packaged environment for the deployment.'
     description: ''
   - name: --set
     summary: 'Update an object by specifying a property path and value to set. Example: --set property1.property2=<value>.'
@@ -266,12 +252,10 @@ directCommands:
                                    [--file]
                                    [--force-string]
                                    [--local {false, true}]
-                                   [--local-enable-gpu {false, true}]
                                    [--name]
                                    [--no-wait]
                                    [--remove]
                                    [--set]
-                                   [--skip-script-validation]
                                    [--vscode-debug {false, true}]
                                    [--web]
   examples:
@@ -306,11 +290,6 @@ directCommands:
     parameterValueGroup: "false, true"
     summary: Update local deployment in Docker environment.
     description: ''
-  - name: --local-enable-gpu
-    defaultValue: "False"
-    parameterValueGroup: "false, true"
-    summary: Enable GPU for local deployment.
-    description: ''
   - name: --name -n
     summary: Name of the deployment.
     description: ''
@@ -325,10 +304,6 @@ directCommands:
   - name: --set
     defaultValue: "[]"
     summary: 'Update an object by specifying a property path and value to set.  Example: --set property1.property2=<value>.'
-    description: ''
-  - name: --skip-script-validation
-    defaultValue: "False"
-    summary: Allows user to bypass deployment scoring script validation.
     description: ''
   - name: --vscode-debug
     defaultValue: "False"

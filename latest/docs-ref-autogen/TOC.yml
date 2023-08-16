@@ -2892,10 +2892,6 @@
         uid: az_cosmosdb_database
         displayName: az cosmosdb database
         items: []
-      - name: dts
-        uid: az_cosmosdb_dts
-        displayName: az cosmosdb dts
-        items: []
       - name: gremlin
         items:
         - name: Summary
@@ -2943,20 +2939,6 @@
         uid: az_cosmosdb_locations
         displayName: az cosmosdb locations
         items: []
-      - name: mongocluster
-        items:
-        - name: Summary
-          uid: az_cosmosdb_mongocluster
-          displayName: az cosmosdb mongocluster
-        - name: firewall
-          items:
-          - name: Summary
-            uid: az_cosmosdb_mongocluster_firewall
-            displayName: az cosmosdb mongocluster firewall
-          - name: rule
-            uid: az_cosmosdb_mongocluster_firewall_rule
-            displayName: az cosmosdb mongocluster firewall rule
-            items: []
       - name: mongodb
         items:
         - name: Summary
@@ -3152,14 +3134,9 @@
         uid: az_managed-cassandra
         displayName: az managed-cassandra
       - name: cluster
-        items:
-        - name: Summary
-          uid: az_managed-cassandra_cluster
-          displayName: az managed-cassandra cluster
-        - name: backup
-          uid: az_managed-cassandra_cluster_backup
-          displayName: az managed-cassandra cluster backup
-          items: []
+        uid: az_managed-cassandra_cluster
+        displayName: az managed-cassandra cluster
+        items: []
       - name: datacenter
         uid: az_managed-cassandra_datacenter
         displayName: az managed-cassandra datacenter
@@ -5476,10 +5453,6 @@
         uid: az_aks_maintenanceconfiguration
         displayName: az aks maintenanceconfiguration
         items: []
-      - name: mesh
-        uid: az_aks_mesh
-        displayName: az aks mesh
-        items: []
       - name: nodepool
         items:
         - name: Summary
@@ -5794,18 +5767,6 @@
         uid: az_ml_environment
         displayName: az ml environment
         items: []
-      - name: feature-set
-        uid: az_ml_feature-set
-        displayName: az ml feature-set
-        items: []
-      - name: feature-store
-        uid: az_ml_feature-store
-        displayName: az ml feature-store
-        items: []
-      - name: feature-store-entity
-        uid: az_ml_feature-store-entity
-        displayName: az ml feature-store-entity
-        items: []
       - name: job
         uid: az_ml_job
         displayName: az ml job
@@ -5831,14 +5792,9 @@
         displayName: az ml schedule
         items: []
       - name: workspace
-        items:
-        - name: Summary
-          uid: az_ml_workspace
-          displayName: az ml workspace
-        - name: outbound-rule
-          uid: az_ml_workspace_outbound-rule
-          displayName: az ml workspace outbound-rule
-          items: []
+        uid: az_ml_workspace
+        displayName: az ml workspace
+        items: []
     - name: ml(v1)
       items:
       - name: Summary
@@ -6762,10 +6718,6 @@
             uid: az_monitor_app-insights_component_billing
             displayName: az monitor app-insights component billing
             items: []
-          - name: continues-export
-            uid: az_monitor_app-insights_component_continues-export
-            displayName: az monitor app-insights component continues-export
-            items: []
           - name: linked-storage
             uid: az_monitor_app-insights_component_linked-storage
             displayName: az monitor app-insights component linked-storage
@@ -6777,10 +6729,6 @@
         - name: metrics
           uid: az_monitor_app-insights_metrics
           displayName: az monitor app-insights metrics
-          items: []
-        - name: web-test
-          uid: az_monitor_app-insights_web-test
-          displayName: az monitor app-insights web-test
           items: []
       - name: autoscale
         items:
@@ -9530,10 +9478,6 @@
           uid: az_spring_api-portal_custom-domain
           displayName: az spring api-portal custom-domain
           items: []
-      - name: apm
-        uid: az_spring_apm
-        displayName: az spring apm
-        items: []
       - name: app
         items:
         - name: Summary
@@ -9668,10 +9612,6 @@
       - name: dev-tool
         uid: az_spring_dev-tool
         displayName: az spring dev-tool
-        items: []
-      - name: eureka-server
-        uid: az_spring_eureka-server
-        displayName: az spring eureka-server
         items: []
       - name: gateway
         items:

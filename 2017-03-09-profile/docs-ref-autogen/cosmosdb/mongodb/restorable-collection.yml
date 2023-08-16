@@ -16,8 +16,6 @@ directCommands:
     az cosmosdb mongodb restorable-collection list --database-rid
                                                    --instance-id
                                                    --location
-                                                   [--end-time]
-                                                   [--start-time]
   requiredParameters:
   - isRequired: true
     name: --database-rid -d
@@ -30,13 +28,6 @@ directCommands:
   - isRequired: true
     name: --location -l
     summary: Location.
-    description: ''
-  optionalParameters:
-  - name: --end-time -e
-    summary: End time of restorable MongoDB collections event feed.
-    description: ''
-  - name: --start-time -s
-    summary: Start time of restorable MongoDB collections event feed.
     description: ''
 commands:
 - az_cosmosdb_mongodb_restorable-collection_list

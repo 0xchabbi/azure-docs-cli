@@ -8,32 +8,12 @@ extensionInformation: >-
 summary: Manage MongoDB resources of Azure Cosmos DB account.
 description: ''
 commands:
-- az_cosmosdb_mongodb_collection
-- az_cosmosdb_mongodb_collection_merge
-- az_cosmosdb_mongodb_collection_redistribute-partition-throughput
-- az_cosmosdb_mongodb_collection_restore
-- az_cosmosdb_mongodb_collection_retrieve-partition-throughput
-- az_cosmosdb_mongodb_database
-- az_cosmosdb_mongodb_database_merge
-- az_cosmosdb_mongodb_database_restore
 - az_cosmosdb_mongodb_restorable-collection
 - az_cosmosdb_mongodb_restorable-collection_list
-- az_cosmosdb_mongodb_role
-- az_cosmosdb_mongodb_role_definition
-- az_cosmosdb_mongodb_role_definition_create
-- az_cosmosdb_mongodb_role_definition_delete
-- az_cosmosdb_mongodb_role_definition_exists
-- az_cosmosdb_mongodb_role_definition_list
-- az_cosmosdb_mongodb_role_definition_show
-- az_cosmosdb_mongodb_role_definition_update
-- az_cosmosdb_mongodb_user
-- az_cosmosdb_mongodb_user_definition
-- az_cosmosdb_mongodb_user_definition_create
-- az_cosmosdb_mongodb_user_definition_delete
-- az_cosmosdb_mongodb_user_definition_exists
-- az_cosmosdb_mongodb_user_definition_list
-- az_cosmosdb_mongodb_user_definition_show
-- az_cosmosdb_mongodb_user_definition_update
+- az_cosmosdb_mongodb_restorable-database
+- az_cosmosdb_mongodb_restorable-database_list
+- az_cosmosdb_mongodb_restorable-resource
+- az_cosmosdb_mongodb_restorable-resource_list
 globalParameters:
 - name: --debug
   summary: Increase logging verbosity to show all debug logs.

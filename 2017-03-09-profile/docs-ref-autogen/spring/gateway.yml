@@ -76,36 +76,6 @@ directCommands:
     defaultValue: "False"
     summary: Do not prompt for confirmation.
     description: ''
-- uid: az_spring_gateway_restart
-  name: az spring gateway restart
-  summary: Restart Spring Cloud Gateway.
-  description: ''
-  syntax: >-
-    az spring gateway restart --resource-group
-                              --service
-                              [--no-wait]
-                              [--yes]
-  examples:
-  - summary: Restart Spring Cloud Gateway.
-    syntax: az spring gateway restart -s MyService -g MyResourceGroup
-  requiredParameters:
-  - isRequired: true
-    name: --resource-group -g
-    summary: Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
-    description: ''
-  - isRequired: true
-    name: --service -s
-    summary: The name of Azure Spring Apps instance, you can configure the default service using az configure --defaults spring=<name>.
-    description: ''
-  optionalParameters:
-  - name: --no-wait
-    defaultValue: "False"
-    summary: Do not wait for the long-running operation to finish.
-    description: ''
-  - name: --yes -y
-    defaultValue: "False"
-    summary: Do not prompt for confirmation.
-    description: ''
 - uid: az_spring_gateway_show
   name: az spring gateway show
   summary: Show the settings, provisioning status and runtime status of gateway.
@@ -122,36 +92,6 @@ directCommands:
     name: --service -s
     summary: The name of Azure Spring Apps instance, you can configure the default service using az configure --defaults spring=<name>.
     description: ''
-- uid: az_spring_gateway_sync-cert
-  name: az spring gateway sync-cert
-  summary: Sync certificate of gateway.
-  description: ''
-  syntax: >-
-    az spring gateway sync-cert --resource-group
-                                --service
-                                [--no-wait]
-                                [--yes]
-  examples:
-  - summary: Sync certificate of gateway.
-    syntax: az spring gateway sync-cert -s MyService -g MyResourceGroup
-  requiredParameters:
-  - isRequired: true
-    name: --resource-group -g
-    summary: Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
-    description: ''
-  - isRequired: true
-    name: --service -s
-    summary: The name of Azure Spring Apps instance, you can configure the default service using az configure --defaults spring=<name>.
-    description: ''
-  optionalParameters:
-  - name: --no-wait
-    defaultValue: "False"
-    summary: Do not wait for the long-running operation to finish.
-    description: ''
-  - name: --yes -y
-    defaultValue: "False"
-    summary: Do not prompt for confirmation.
-    description: ''
 - uid: az_spring_gateway_update
   name: az spring gateway update
   summary: Update an existing gateway properties.
@@ -159,10 +99,7 @@ directCommands:
   syntax: >-
     az spring gateway update --resource-group
                              --service
-                             [--addon-configs-file]
-                             [--addon-configs-json]
                              [--allow-credentials {false, true}]
-                             [--allow-origin-patterns]
                              [--allowed-headers]
                              [--allowed-methods]
                              [--allowed-origins]
@@ -172,11 +109,9 @@ directCommands:
                              [--api-version]
                              [--apm-types]
                              [--assign-endpoint {false, true}]
-                             [--certificate-names]
                              [--client-id]
                              [--client-secret]
                              [--cpu]
-                             [--enable-cert-verify {false, true}]
                              [--exposed-headers]
                              [--https-only {false, true}]
                              [--instance-count]
@@ -201,18 +136,9 @@ directCommands:
     summary: The name of Azure Spring Apps instance, you can configure the default service using az configure --defaults spring=<name>.
     description: ''
   optionalParameters:
-  - name: --addon-configs-file
-    summary: The file path of JSON string of add-on configurations.
-    description: ''
-  - name: --addon-configs-json
-    summary: JSON string of add-on configurations.
-    description: ''
   - name: --allow-credentials
     parameterValueGroup: "false, true"
     summary: Whether user credentials are supported on cross-site requests.
-    description: ''
-  - name: --allow-origin-patterns --allowed-origin-patterns
-    summary: Comma-separated list of allowed origin patterns to make cross-site requests.
     description: ''
   - name: --allowed-headers
     summary: Comma-separated list of allowed headers in cross-site requests. The special value `*` allows actual requests to send any header.
@@ -242,9 +168,6 @@ directCommands:
     parameterValueGroup: "false, true"
     summary: If true, assign endpoint URL for direct access.
     description: ''
-  - name: --certificate-names
-    summary: Comma-separated list of certificate names in Azure Spring Apps.
-    description: ''
   - name: --client-id
     summary: The public identifier for the application.
     description: ''
@@ -253,10 +176,6 @@ directCommands:
     description: ''
   - name: --cpu
     summary: CPU resource quantity. Should be 500m or number of CPU cores.
-    description: ''
-  - name: --enable-cert-verify --enable-certificate-verification
-    parameterValueGroup: "false, true"
-    summary: If true, will verify certificate in TLS connection from gateway to app.
     description: ''
   - name: --exposed-headers
     summary: Comma-separated list of HTTP response headers to expose for cross-site requests.
@@ -303,7 +222,6 @@ commands:
 - az_spring_gateway_custom-domain_unbind
 - az_spring_gateway_custom-domain_update
 - az_spring_gateway_delete
-- az_spring_gateway_restart
 - az_spring_gateway_route-config
 - az_spring_gateway_route-config_create
 - az_spring_gateway_route-config_list
@@ -311,7 +229,6 @@ commands:
 - az_spring_gateway_route-config_show
 - az_spring_gateway_route-config_update
 - az_spring_gateway_show
-- az_spring_gateway_sync-cert
 - az_spring_gateway_update
 globalParameters:
 - name: --debug

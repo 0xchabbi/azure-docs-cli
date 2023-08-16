@@ -13,7 +13,7 @@ directCommands:
   summary: List events by type or view a single event from an application, specified by type and ID.
   description: ''
   syntax: >-
-    az monitor app-insights events show --type {$all, availabilityResults, browserTimings, customEvents, customMetrics, dependencies, exceptions, pageViews, performanceCounters, requests, traces}
+    az monitor app-insights events show --type
                                         [--app]
                                         [--end-time]
                                         [--event]
@@ -30,7 +30,6 @@ directCommands:
   requiredParameters:
   - isRequired: true
     name: --type
-    parameterValueGroup: "$all, availabilityResults, browserTimings, customEvents, customMetrics, dependencies, exceptions, pageViews, performanceCounters, requests, traces"
     summary: The type of events to retrieve.
     description: ''
   optionalParameters:
